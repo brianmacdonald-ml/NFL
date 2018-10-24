@@ -84,6 +84,12 @@ ggplot(num_drives_by_num_plays_season, aes(num_plays,freq))   +
   geom_text(aes(label=freq), vjust=1, col="white")  +
   facet_grid(rows=vars(season))
 
+#Plot each num_plays across time
+
+ggplot(num_drives_by_num_plays_season,aes(x=season,y=freq,group=num_plays)) +
+  geom_line()+
+  aes(color=factor(num_plays))+
+  scale_color_brewer(palette="Dark2")
 
 # what are the averages for all of the NFL
 
