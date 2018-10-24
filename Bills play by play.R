@@ -85,7 +85,7 @@ ggplot(num_drives_by_num_plays_season, aes(num_plays,freq))   +
   facet_grid(rows=vars(season))
 
 #Plot 3,4 and 5 and outs across time
-bills_3_4_5_out <- num_drives_by_num_plays_season %>% filter(num_plays >= 3 , num_plays <= 6)
+bills_3_4_5_out <- num_drives_by_num_plays_season %>% filter(num_plays >= 4 , num_plays <= 6)
 ggplot(bills_3_4_5_out,aes(x=season,y=freq,group=num_plays)) +
   geom_line()+
   aes(color=factor(num_plays))+
